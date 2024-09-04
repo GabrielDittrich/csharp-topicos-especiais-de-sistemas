@@ -1,0 +1,27 @@
+###
+GET http://localhost:5100/tarefas
+
+### Requisição GET
+GET http://localhost:5100/tarefas/concluidas
+
+### Requisição POST
+POST http://localhost:5100/tarefas
+Content-Type: application/json
+
+{
+    "nome" : "Comprar Porco",
+    "concluida" : true
+}
+
+### Requisição PUT
+PUT http://localhost:5100/tarefas/2
+Content-Type: application/json
+
+{
+    "nome" : "Coomprar Carne",
+    "concluida" : false
+}
+    
+
+### Requisição DELETE
+DELETE  http://localhost:5100/tarefas/3
