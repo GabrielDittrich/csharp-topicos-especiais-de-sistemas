@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid-Layout</title>
+  <!-- <link rel="stylesheet" href="reset.css"> -->
+  <style>
+
+    .main-head {
+      grid-area: header;
+    }
+    .content {
+      grid-area: content;
+    }
+    .main-nav {
+      grid-area: nav;
+    }
+    .side {
+      grid-area: sidebar;
+    }
+    .ad {
+      grid-area: ad;
+    }
+    .main-footer {
+      grid-area: footer;
+    }
+
+    html, body {
+      font-size: 20px;
+      font-family: "Roboto";
+      box-sizing: border-box;
+      padding: 10px;
+      min-height: 96vh;
+      margin: 0;
+    }
+
+    body {
+      display: grid;
+      gap: 20px;
+      /* grid-template-columns: 1fr; */
+      /* grid-template-rows: 100px 100px; */
+      grid-template-areas:
+        "header"
+        "nav"
+        "content"
+        "sidebar"
+        "ad"
+        "footer";
+    }
+
+    body > * {
+        border: 2px solid #f08c00;
+        background-color: #ffec99;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    @media (min-width: 500px) {
+      body {
+        grid-template-columns: 3fr 1fr;
+        grid-template-areas:
+          "header  header"
+          "nav     nav"
+          "content sidebar"
+          "content sidebar"
+          "content ad"
+          "content ad"
+          "content ad"
+          "footer  footer";
+      }
+      nav ul {
+        display: flex;
+        justify-content: center;
+      }
+
+      nav ul li {
+        margin: 0 20px 0 20px;
+      }
+    }
+
+    @media (min-width: 700px) {
+      body {
+          grid-template-columns: 1fr 4fr 1fr;
+          grid-template-areas:
+            "header header  header" 
+            "nav    content sidebar"
+            "nav    content ad"
+            "footer footer  footer"
+        }
+        nav ul {
+          flex-direction: column;
+        }
+      }
+
+      @media (min-width: 1500px) {
+        body {
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+      }
+
+  </style>
+
+
+</head>
+<body>
+    <header class="main-head">Cabeçalho</header>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="">Nav 1</a></li>
+            <li><a href="">Nav 2</a></li>
+            <li><a href="">Nav 3</a></li>
+        </ul>
+    </nav>
+    <article class="content">
+        <h1>Área do conteúdo principal</h1>
+        <p>Neste layout, são exibidas as áreas na ordem de origem para
+          qualquer tela com menos de 500 pixels de largura. Vamos para uma coluna de duas
+          layout e, em seguida, para um layout de três colunas redefinindo o
+          grade e a colocação de itens na grade.</p>
+    </article>
+    <aside class="side">Barra lateral</aside>
+    <div class="ad">Anúncios</div>
+    <footer class="main-footer">Rodapé</footer>
+</body>
+</html>
