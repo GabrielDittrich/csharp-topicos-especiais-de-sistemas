@@ -1,4 +1,4 @@
-# CSharp - Tópicos Especiais de Sistemas
+# Tópicos Especiais de Sistemas - Universidade Positivo
 
 Este repositório contém os projetos desenvolvidos na disciplina **Tópicos Especiais de Sistemas**, que combina tecnologias modernas para o desenvolvimento de aplicações web full stack.
 
